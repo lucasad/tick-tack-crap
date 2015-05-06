@@ -8,7 +8,8 @@ module TicTacToe
     def run
       until game_over?
         display
-        @board.play get_valid_move
+        # Get the next move from the player and update the game state.
+        @board.play(get_valid_move,@players[0].sign)
         increment_turn
       end
     end
@@ -26,7 +27,10 @@ module TicTacToe
     end
     
     def get_valid_move
-      move = get_move until valid?(move)
+      move = get_move
+      unless valid? move
+        raise "Player: #{@players[0]} attempted the invalid move: #{move}"
+      end
       return move
     end
     
