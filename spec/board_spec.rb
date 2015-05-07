@@ -6,6 +6,7 @@ RSpec.describe TicTacToe::Board do
     @b1 = TicTacToe::Board.new ["x","x","x",
                                 "o","o","x",
                                 "o","x","o"]
+    @b2 = TicTacToe::Board.new
   end
   it "should pretty print with to_s" do
     expect(@b0.to_s).to eq(
@@ -55,9 +56,9 @@ RSpec.describe TicTacToe::Board do
     expect(@b1.game_over?).to be true
   end
   it "should allow players to play in spaces" do
-    @b0.play(3,"x")
-    @b0.play(4,"x")
-    @b0.play(5,"x")
-    expect(@b0.win?).to eq "x"
+    @b2.play(3,"x")
+    @b2.play(4,"x")
+    @b2.play(5,"x")
+    expect(@b2.win?).to eq "x"
   end
 end

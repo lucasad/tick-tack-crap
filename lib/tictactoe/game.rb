@@ -7,7 +7,6 @@ module TicTacToe
     
     def run
       until game_over?
-        display
         # Get the next move from the player and update the game state.
         @board.play(get_valid_move,@players[0].sign)
         increment_turn
@@ -16,10 +15,6 @@ module TicTacToe
     
     def game_over?
       @board.game_over?
-    end
-    
-    def display
-      print @board.to_s
     end
     
     def valid?(move)

@@ -12,6 +12,7 @@ module TicTacToe
     end
     
     def get_move(board)
+      puts board.to_s
       until board.valid_move?(move = prompt)
         print "#{move} is not valid. "
       end
