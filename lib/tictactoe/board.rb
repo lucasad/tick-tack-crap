@@ -12,14 +12,14 @@ module TicTacToe
     def rows
       @board.each_slice(3).to_a
     end
-    def cols
+    def columns
       rows.transpose
     end
-    def diags
+    def diagonals
       [@board.values_at(0,4,8),@board.values_at(2,4,6)]
     end
     def lines
-      rows + cols + diags
+      rows + columns + diagonals
     end
     
     def win?
