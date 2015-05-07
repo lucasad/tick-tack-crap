@@ -17,6 +17,11 @@ module TicTacToe
         @board.play(get_valid_move,@players[0].sign)
         increment_turn
       end
+      if(w = @board.win?)
+        puts "Game over #{w} wins!"
+      else
+        puts "Cat's game."
+      end
     end
     
     # Check whether the game has ended.
