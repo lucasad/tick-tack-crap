@@ -5,9 +5,10 @@ module TicTacToe
       @sign = sign
     end
     
-    def prompt
+    def prompt(&responder)
+      responder ||= lambda { gets }
       print "Enter a valid move for #{@sign}:  "
-      gets.to_i
+      responder.call.chomp.to_i
     end
     
     def get_move(board)
