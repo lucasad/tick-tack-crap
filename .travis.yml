@@ -1,2 +1,2 @@
 language: ruby
-install: gem install rake yard
+install: gem install rspec yard
