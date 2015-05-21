@@ -13,8 +13,11 @@ module TicTacToe
     # @param board [Board] the board to get a move for
     # @return [Integer] the index to play at
     def get_move(board)
-        ### TODO: Actually do this
-        raise NotImplementedError
+        move = nil #Do this so move is in the outer scope
+        begin
+            move = rand(0..8)
+        end until board.valid_move? move
+        return move
     end
   end
 end
