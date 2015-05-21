@@ -1,11 +1,12 @@
+require 'tictactoe/player'
 module TicTacToe
-  class Human
+  class Human < Player
     attr_accessor :sign
     # Creates a new CLI based player with a given symbol
     #
     # @param sign [String] A single character string representing the players
     def initialize(sign)
-      @sign = sign
+        super sign
     end
     
     # Prompts the user for a valid move
@@ -28,12 +29,6 @@ module TicTacToe
         print "#{move} is not valid. "
       end
       return move
-    end
-    # Gets the string representing the player's sign.
-    #
-    # @return [String] the player's sign
-    def to_s
-      @sign
     end
   end
 end
