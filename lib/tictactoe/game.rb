@@ -17,6 +17,9 @@ module TicTacToe
         @board.play(get_valid_move,@players[0].sign)
         increment_turn
       end
+
+      puts @board.to_s
+
       if(w = @board.win?)
         puts "Game over #{w} wins!"
       else
