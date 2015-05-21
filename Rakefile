@@ -7,3 +7,5 @@ end
 task :test do
   `rspec`
 end
+
+task :default => [:test, :docs]
